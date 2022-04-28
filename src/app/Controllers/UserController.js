@@ -11,6 +11,16 @@ class UserController {
     })
   }
 
+  async searchUser (req, res){
+
+    const user = await User.find()
+    return res.status(200).json({
+        error: false,
+        user
+    })
+
+}
+
   async store(req, res) {
 
     /**
@@ -19,6 +29,7 @@ class UserController {
      */
     let schema = yup.object().shape({
       name: yup.string().required(),
+      cpf: yup.string().required(),
       email: yup.string().email().required(),
       password: yup.string().required()
     });
@@ -51,14 +62,14 @@ class UserController {
      /**
       * Desestrutuação dos dados da requisição
       */
-    const { name, email, password } = req.body;
+    const { name, cpf, email, password } = req.body;
 
     /**
       * criação da constante data
       */
     
 
-    const data = { name, email, password };
+    const data = { name, cpf, email, password };
 
     /**
       * Criptografar a senha

@@ -6,12 +6,13 @@ class Connection {
   }
 
   dataBaseConnectionMongoDB(){
-    this.mongoDBConnection = mongoose.connect("mongodb://localhost/nodejs", {
+    this.mongoDBConnection = mongoose.connect("mongodb+srv://guilhermereis:guilherme@cluster0.1pyz1.mongodb.net/myFirstDatabase?retryWrites=true&w=majority", {
       useNewUrlParser: true,
       useUnifiedTopology: true,
       useFindAndModify: false,
       useCreateIndex: true
     })
+    
     .then(() => {
       console.log("Conexão estabelicida com o MongoDB");
     })

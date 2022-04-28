@@ -13,14 +13,14 @@ class LoginController {
     if(!userExist){
       return res.status(400).json({
         error: true,
-        message: "Usuário não existe!"
+        message: "Usuário não cadastrado!"
       })
     }
 
     if(!(await bcrypt.compare(password, userExist.password))) {
       return res.status(400).json({
         error: true,
-        message: "A senha está inválida!"
+        message: "A senha inválida!"
       })
     }
 
