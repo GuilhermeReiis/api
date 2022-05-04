@@ -5,6 +5,7 @@ const LoginController = require('./app/Controllers/LoginController');
 const UserController = require('./app/Controllers/UserController');
 const CursoController = require('./app/Controllers/CursoController');
 const AlunosController = require('./app/Controllers/AlunoController');
+const VendasController = require('./app/Controllers/VendasController');
 
 const routes = new Router();
 
@@ -26,6 +27,12 @@ routes.post("/aluno", AlunosController.addAluno);
 routes.get("/aluno", AlunosController.searchAluno);
 routes.delete("/aluno/:id", AlunosController.deleteAluno);
 routes.put("/aluno/:id", AlunosController.alterarAluno);
+
+// routes.post("/venda",VendasController.addVenda);
+routes.post("/venda",VendasController.addVenda);
+routes.get("/venda",VendasController.searchVenda);
+routes.delete("/venda/:id",VendasController.deleteVenda);
+routes.put("/venda/:id",VendasController.alterarVenda);
 
 
 module.exports = routes;
