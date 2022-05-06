@@ -6,7 +6,7 @@ const config = require('../../config/auth');
 class LoginController {
 
   async index(req, res) {
-    const { email, password } = req.body;
+    const { email, password, status } = req.body;
 
     const userExist = await User.findOne({ email });
 
@@ -27,7 +27,8 @@ class LoginController {
     return res.status(200).json({
       user: {
         name: userExist.name,
-        email: userExist.email
+        email: userExist.email,
+        status: userExist.status,
       },
       token: jwt.sign(
         {id: userExist._id}, 

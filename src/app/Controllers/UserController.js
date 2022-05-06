@@ -31,7 +31,9 @@ class UserController {
       name: yup.string().required(),
       cpf: yup.string().required(),
       email: yup.string().email().required(),
-      password: yup.string().required()
+      tell: yup.string().required(),
+      password: yup.string().required(),
+      status: yup.boolean().required()
     });
 
     if(!(await schema.isValid(req.body))){
@@ -62,14 +64,14 @@ class UserController {
      /**
       * Desestrutuação dos dados da requisição
       */
-    const { name, cpf, email, password } = req.body;
+    const { name, cpf, email, tell, password, status } = req.body;
 
     /**
       * criação da constante data
       */
     
 
-    const data = { name, cpf, email, password };
+    const data = { name, cpf, email, tell, password, status };
 
     /**
       * Criptografar a senha
