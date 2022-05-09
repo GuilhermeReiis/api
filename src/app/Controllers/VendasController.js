@@ -7,7 +7,7 @@ const Aluno = require('../Models/aluno');
 
 class VendasController{
     async addVenda(req, res) {
-        const{status, aluno, curso, vendedor} = req.body;
+        const{aluno, curso, vendedor, valorPago, troco} = req.body;
 
         const  vendaExist = await Vendas.findById();
 
@@ -18,7 +18,7 @@ class VendasController{
             })
         }
 
-        const data = {status, aluno, curso, vendedor};
+        const data = {aluno, curso, vendedor, valorPago, troco};
 
         await Vendas.create(data, (err)=> {
             if(err) return res.status(400).json({
