@@ -22,6 +22,9 @@ routes.put("/curso/:id",CursoController.alterarCurso);
     
 
 routes.get("/users", UserController.searchUser);
+routes.get("/users/:id", UserController.searchUser);
+routes.delete("/users/:id", UserController.deleteUser);
+
 
 routes.post("/aluno", AlunosController.addAluno);
 routes.get("/aluno", AlunosController.searchAluno);
