@@ -8,29 +8,31 @@ const AlunosController = require('./app/Controllers/AlunoController');
 const VendasController = require('./app/Controllers/VendasController');
 
 const routes = new Router();
-
+// LOGIN
 routes.post("/user", UserController.store);
 routes.get("/user", AuthMidleware, UserController.show);
 
 routes.post("/login", LoginController.index);
 
-
+// CURSOS
 routes.post("/curso", CursoController.index);
 routes.get("/cursos", CursoController.searchCurso);
 routes.delete("/curso/:id",CursoController.deleteCurso);
 routes.put("/curso/:id",CursoController.alterarCurso);
     
-
+// USERS
 routes.get("/users", UserController.searchUser);
 routes.get("/users/:id", UserController.searchUser);
 routes.delete("/users/:id", UserController.deleteUser);
+routes.put("/users/:id",UserController.alterarUser);
 
-
+// ALUNOS
 routes.post("/aluno", AlunosController.addAluno);
 routes.get("/aluno", AlunosController.searchAluno);
 routes.delete("/aluno/:id", AlunosController.deleteAluno);
 routes.put("/aluno/:id", AlunosController.alterarAluno);
 
+// VENDAS
 // routes.post("/venda",VendasController.addVenda);
 routes.post("/venda",VendasController.addVenda);
 routes.get("/venda",VendasController.searchVenda);

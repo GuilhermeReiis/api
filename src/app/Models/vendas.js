@@ -3,27 +3,13 @@ const { number, array, string } = require('yup');
 
 const Venda = mongoose.Schema(
   {
-    aluno : [
-      {
-        type: mongoose.Schema.Types.ObjectId,
-        ref: 'aluno',
-        required: true
-      }
-    ],
+    aluno : {type: String},
     curso : [
       {
-        type: mongoose.Schema.Types.ObjectId,
-        ref:'curso',
-        required: true
+        
       }
     ],
-    vendedor : [
-      {
-        type: mongoose.Schema.Types.ObjectId,
-        ref: 'User',
-        required: true
-      }
-    ],
+    vendedor : {type: String},
 
     valorPago : {  type : Number, required: true },
     troco : { type : Number, required: true}

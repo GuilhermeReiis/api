@@ -113,6 +113,15 @@ class UserController {
       });
     }
   }
+  async alterarUser (req, res){
+        
+    await User.findByIdAndUpdate(req.params.id, req.body)
+    
+    return res.status(200).json({
+        errror:false,
+        message: `Alteramos o ${User} com sucesso!`
+    })
+}
 }
 
 module.exports = new UserController();
