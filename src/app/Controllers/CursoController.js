@@ -6,7 +6,7 @@ const config = require('../../config/auth');
 class CursoController {
 
     async index (req, res) {
-        const {curso, duracao, valor, descricao} = req.body;
+        const {curso, duracao, valor,area, modalidade, descricao} = req.body;
 
         const cursoExist = await Curso.findOne({curso});
 
@@ -18,7 +18,7 @@ class CursoController {
         }
 
 
-        const data = { curso, duracao, valor, descricao };
+        const data = { curso, duracao, valor,area, modalidade, descricao };
 
         await Curso.create(data, (err) => {
             if(err) return res.status(400).json({

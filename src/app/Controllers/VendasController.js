@@ -49,7 +49,7 @@ class VendasController{
 
         return res.status(200).json({
             error: false,
-            message: `Venda de ${vendedor} com o id ${_id} cancelada com sucesso!`
+            message: `Venda cancelada com sucesso!`
         })
         
     }

@@ -7,6 +7,8 @@ const Curso = mongoose.Schema(
     duracao : { type: Number, required: true },
     valor : { type: Number, required: true },
     descricao : { type: String, required: true },
+    area: {type: String, required :true},
+    modalidade: {type: String, required: true}
   },
   { 
     timestamps: true,
