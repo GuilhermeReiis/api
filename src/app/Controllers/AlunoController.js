@@ -54,11 +54,12 @@ class AlunoController{
 
     async alterarAluno (req, res){
         
-        await Aluno.findByIdAndUpdate(req.params.id, req.body)
+       await Aluno.findByIdAndUpdate(req.params.id, req.body)
         
         return res.status(200).json({
             errror:false,
-            message: `Alteramos os dados do aluno com sucesso!`
+            message: `Alteramos os dados do com sucesso!`,
+       
         })
     }
 

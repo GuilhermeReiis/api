@@ -9,9 +9,7 @@ const Aluno = mongoose.Schema(
     tell: { type: Number, required: true },
     curso: [
       {
-        type: mongoose.Schema.Types.ObjectId,
-        ref: "cursos",
-        required: false,
+        type: String
       },
     ],
   },
