@@ -14,10 +14,11 @@ const Venda = mongoose.Schema(
         valor: Number
       }
     ],
+    troco : {type : Number, },
+    valor: {type: Number, },
+    valorPg: {type: Number,},
     vendedor : {type: Object},
 
-    valorPago : {type: Number, },
-    troco : {type : Number, }
   },
   { 
     timestamps: true,
